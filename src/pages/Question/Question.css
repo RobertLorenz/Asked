@@ -27,3 +27,8 @@
     text-align: left;
     line-height: 1.5em;
   }
+  .word{
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+  }

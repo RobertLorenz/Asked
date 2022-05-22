@@ -16,6 +16,7 @@ export default function Question() {
           <ul>
             {question.keywords.map(kw => <li key={kw}>{kw}</li>)}
           </ul>
+          <p className="word">Question: </p>
           <p className="q">{question.question}</p>
         </>}
     </div>
