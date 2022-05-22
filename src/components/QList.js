@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 
 
 export default function QList({ questions }) {
+
+  if(questions.length === 0){
+    return <div className="error">No results</div>
+  }
   return (
     <div className="question-list">
       {questions.map(question => (
