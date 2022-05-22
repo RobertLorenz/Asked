@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useFetch } from '../../hooks/useFetch'
 import { useHistory } from 'react-router-dom'
 import './Create.css'
+import { useMode } from '../../hooks/useMode'
 
 export default function Create() {  
   const [title, setTitle] = useState('')
@@ -10,6 +11,7 @@ export default function Create() {
   const [keywords, setKeywords] = useState([])
   const keywordInput = useRef(null)
   const history = useHistory()
+  const { mode } = useMode()
 
   const { postData, data, error } = useFetch('http://localhost:3000/questions', 'POST')
   
@@ -37,8 +39,8 @@ export default function Create() {
 
 
   return (
-    <div className="create">
-      <h2 className="page-title">Ask something</h2>
+    <div className={`create ${mode}`}>
+      <h2 className="page-title-create">Ask something</h2>
       <form onSubmit={handleSubmit}>
 
         <label>

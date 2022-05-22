@@ -31,3 +31,14 @@
   .keywords button {
     margin: 0 0 0 10px;
   }
+
+  .page-title-create{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+  }
+
+  .create.dark{
+    color:#fff;
+  }
+  

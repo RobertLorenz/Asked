@@ -5,12 +5,16 @@ import Create from './pages/create/Create'
 import Search from './pages/Search/Search'
 import Question from './pages/Question/Question'
 import Navbar from './components/Navbar'
+import { useMode } from './hooks/useMode'
+import ModeSelector from './components/ModeSelector'
 
 function App() {
+  const { mode } = useMode()
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
       <BrowserRouter>
       <Navbar />
+      <ModeSelector />
       <Route exact path="/">
         <Home />
       </Route>
