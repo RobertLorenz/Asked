@@ -9,6 +9,7 @@ export default function Create() {
   const [question, setQuestion] = useState('')
   const [newKeyword, setNewKeyword] = useState('')
   const [keywords, setKeywords] = useState([])
+  const [likes, setLikes] = useState(0)
   const keywordInput = useRef(null)
   const history = useHistory()
   const { mode } = useMode()
@@ -17,7 +18,7 @@ export default function Create() {
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    postData({title, question, keywords})
+    postData({title, question, keywords, likes})
   }
 
   const handleAdd = (e) => {
