@@ -2,6 +2,7 @@ import { useParams, useHistory } from 'react-router-dom'
 import { useState } from 'react'
 import { useFetch } from '../../hooks/useFetch'
 import CommentSection from '../../components/CommentSection'
+import { useMode } from '../../hooks/useMode'
 import './Question.css'
 
 
@@ -11,6 +12,7 @@ export default function Question( comments ) {
   const { error, isPending, data: question} = useFetch(url)
   const history = useHistory()
   const [content,setContent] = useState('')
+  const { mode } = useMode()
   
   
   const { postData, data} = useFetch('http://localhost:3000/comments/', 'POST')
@@ -18,8 +20,10 @@ export default function Question( comments ) {
   const handleSubmit =  (e) => {
     e.preventDefault()
     let questionId = id
-    postData({content, questionId})
+    let likes = 0
+    postData({content, questionId, likes})
     setContent('')
+    window.location.reload()
   }
 
   const handleClick= () => {
@@ -50,18 +54,16 @@ export default function Question( comments ) {
         </>}
     </div>
     <div className="comments">
-      <h4>Comments</h4>
-      
       <CommentSection />
       <form className="add-comment" onSubmit={handleSubmit}>
         <label>
-          <span>Add new comment:</span>
+          <span className={`add ${mode}`}>Add new comment:</span>
           <textarea 
             onChange={(e) => setContent(e.target.value)}
             value={content}
           ></textarea>
         </label>
-        <button className="btn">Add Comment</button>
+        <button className="btn">Send</button>
       </form>
     </div>
     </div>

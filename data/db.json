@@ -1,70 +1,29 @@
 {
   "questions": [
     {
-      "title": "asd",
-      "question": "asdadsas\n\n",
+      "title": "Hardest question",
+      "question": "What's nine plus ten?",
       "keywords": [
-        "1",
-        "asd"
+        "math",
+        "fnaf-lore",
+        "unsolvable"
       ],
       "likes": 0,
       "id": 1
-    },
-    {
-      "title": "helo",
-      "question": "goodbye\n\n",
-      "keywords": [
-        "hi"
-      ],
-      "likes": 0,
-      "id": 2
     }
   ],
   "comments": [
     {
-      "content": "asd",
+      "content": "21",
       "questionId": "1",
+      "likes": 0,
       "id": 1
     },
     {
-      "content": "asd",
+      "content": "No idea",
       "questionId": "1",
+      "likes": 0,
       "id": 2
-    },
-    {
-      "content": "asd",
-      "questionId": "1",
-      "id": 3
-    },
-    {
-      "content": "asd",
-      "questionId": "1",
-      "id": 4
-    },
-    {
-      "content": "asd",
-      "questionId": "1",
-      "id": 5
-    },
-    {
-      "content": "asd",
-      "questionId": "1",
-      "id": 6
-    },
-    {
-      "content": "g\n",
-      "questionId": "2",
-      "id": 7
-    },
-    {
-      "content": "",
-      "questionId": "2",
-      "id": 8
-    },
-    {
-      "content": "g",
-      "questionId": "2",
-      "id": 9
     }
   ]
 }

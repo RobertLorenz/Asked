@@ -1,0 +1,56 @@
+  .section{
+    margin: 60px auto;
+    max-width: 1200px;
+  }
+  .comment-list {
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #f2f2f2;
+    margin-top: 20px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
+    background: #fff;
+    margin-bottom: 30px;
+  }
+
+  .comment-list .card {
+    background: #f2f2f2;
+    color: #333;
+    padding: 20px;
+    border-radius: 4px;
+    border-style: solid;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .comment-author .avatar {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  .comment-content {
+    font-size: 1.3em;
+  }
+
+ .comment-list .likes{
+    padding: 20px;
+  }
+
+  .likes img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .buttons img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .comment-list .buttons{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  
