@@ -20,8 +20,7 @@ export default function Question( comments ) {
   const handleSubmit =  (e) => {
     e.preventDefault()
     let questionId = id
-    let likes = 0
-    postData({content, questionId, likes})
+    postData({content, questionId})
     setContent('')
     window.location.reload()
   }

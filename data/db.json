@@ -10,19 +10,28 @@
       ],
       "likes": 0,
       "id": 1
+    },
+    {
+      "title": "Shrek",
+      "question": "Who is shrek?",
+      "keywords": [
+        "1",
+        "2",
+        "3"
+      ],
+      "likes": 0,
+      "id": 2
     }
   ],
   "comments": [
     {
-      "content": "21",
-      "questionId": "1",
-      "likes": 0,
+      "content": "a",
+      "questionId": "2",
       "id": 1
     },
     {
-      "content": "No idea",
-      "questionId": "1",
-      "likes": 0,
+      "content": "bv",
+      "questionId": "2",
       "id": 2
     }
   ]

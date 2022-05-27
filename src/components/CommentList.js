@@ -1,18 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import likeIcon from '../assets/like.svg'
 import dislikeIcon from '../assets/dislike.svg'
 import deleteIcon from '../assets/thrash.svg'
 import editIcon from '../assets/edit.svg'
-import { useFetch } from '../hooks/useFetch'
 import './CommentList.css'
 
 
-export default function CommentList( {comments} ) {
-  const [content,setContent] = useState()
+export default function CommentList( ) {
+  const [content,setContent] = useState("")
   const [likes, setLikes] = useState(0)
   let id = window.location.pathname.split("/").pop()
   const url = 'http://localhost:3000/comments/' + id
-  const {  data: comment} = useFetch(url)
+  const [comments, setComments] = useState([]);
+  useEffect(() => {
+    const requestOptions = {
+      method: 'GET'
+    }
+    fetch("http://localhost:3000/comments", requestOptions)
+      .then(response => response.json())
+      .then(data => setComments(data));
+    },[])
+
  
     if(comments.length === 0){
         return <div className="error">No comments on this topic</div>
@@ -29,15 +37,36 @@ export default function CommentList( {comments} ) {
       })      
     }
 
-    
-    const handleSelect = (id) => {
-      const requestOptions = {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' }
+    const handleSelect = (commentId) =>{
+      fetch('http://localhost:3000/comments/' + commentId)
+      .then(response => response.json())
+      .then(data => { setContent(data)})
     }
-    fetch("http://localhost:3000/comments/" + id, requestOptions)
+
+    
+    const handleUpdate = () => {
+      console.log(content)
+      const newBody = {...content, content: content.content}
+      console.log(newBody)
+      const requestOptions = {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newBody)
+      }
+
+        fetch("http://localhost:3000/comments/" + content.id, requestOptions)
         .then(response => response.json())
-        .then(data => setContent({ content: data.content }));
+        .then(data => {
+          console.log(data)
+          setContent(data)})
+       
+          const reqtOptions = {
+            method: 'GET'
+          }
+          fetch("http://localhost:3000/comments", reqtOptions)
+            .then(response => response.json())
+            .then(data => setComments(data));
+        
     }
 
     const handlePlus = (id) => {
@@ -82,13 +111,13 @@ export default function CommentList( {comments} ) {
         </div>
       })}
     </div>
-    <form className="update-comment" >
+    <form className="update-comment" onSubmit={handleUpdate}>
         <label>
           <textarea 
-            value={content} onChange={(e)=>{setContent(e.target.value)}}
+            value={content.content} onChange={(e)=>{setContent({...content, content: e.target.value})}}
           ></textarea>
         </label>
-        <button>Send</button>
+        <button type="submit">Send</button>
       </form>
     </div>
   )
