@@ -1,12 +1,12 @@
 import { useParams, useHistory } from 'react-router-dom'
 import { useState } from 'react'
 import { useFetch } from '../../hooks/useFetch'
-import CommentSection from '../../components/CommentSection'
+import CommentList from '../../components/CommentList'
 import { useMode } from '../../hooks/useMode'
 import './Question.css'
 
 
-export default function Question( comments ) {
+export default function Question() {
   const { id } = useParams()
   const url = 'http://localhost:3000/questions/' + id
   const { error, isPending, data: question} = useFetch(url)
@@ -15,12 +15,13 @@ export default function Question( comments ) {
   const { mode } = useMode()
   
   
-  const { postData, data} = useFetch('http://localhost:3000/comments/', 'POST')
+  const { postData } = useFetch('http://localhost:3000/comments/', 'POST')
 
   const handleSubmit =  (e) => {
     e.preventDefault()
     let questionId = id
-    postData({content, questionId})
+    let likes = 0
+    postData({content, questionId, likes})
     setContent('')
     window.location.reload()
   }
@@ -33,9 +34,7 @@ export default function Question( comments ) {
     })
   }
 
-    
 
-  
 
   return (
     <div>
@@ -53,7 +52,7 @@ export default function Question( comments ) {
         </>}
     </div>
     <div className="comments">
-      <CommentSection />
+    <CommentList />
       <form className="add-comment" onSubmit={handleSubmit}>
         <label>
           <span className={`add ${mode}`}>Add new comment:</span>

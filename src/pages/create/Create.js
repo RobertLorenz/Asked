@@ -9,16 +9,15 @@ export default function Create() {
   const [question, setQuestion] = useState('')
   const [newKeyword, setNewKeyword] = useState('')
   const [keywords, setKeywords] = useState([])
-  const [likes, setLikes] = useState(0)
   const keywordInput = useRef(null)
   const history = useHistory()
   const { mode } = useMode()
 
-  const { postData, data, error } = useFetch('http://localhost:3000/questions', 'POST')
+  const { postData, data } = useFetch('http://localhost:3000/questions', 'POST')
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    postData({title, question, keywords, likes})
+    postData({title, question, keywords})
   }
 
   const handleAdd = (e) => {

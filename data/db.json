@@ -8,7 +8,6 @@
         "fnaf-lore",
         "unsolvable"
       ],
-      "likes": 0,
       "id": 1
     },
     {
@@ -19,7 +18,6 @@
         "2",
         "3"
       ],
-      "likes": 0,
       "id": 2
     }
   ],
@@ -27,12 +25,32 @@
     {
       "content": "a",
       "questionId": "2",
+      "likes": 0,
       "id": 1
     },
     {
       "content": "bv",
       "questionId": "2",
+      "likes": 0,
       "id": 2
+    },
+    {
+      "content": "asdf",
+      "questionId": "1",
+      "likes": 0,
+      "id": 3
+    },
+    {
+      "content": "21",
+      "questionId": "1",
+      "likes": 0,
+      "id": 4
+    },
+    {
+      "content": "19asd",
+      "questionId": "1",
+      "likes": 1,
+      "id": 5
     }
   ]
 }
