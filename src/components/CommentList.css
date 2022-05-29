@@ -36,21 +36,40 @@
     padding: 20px;
   }
 
-  .likes img {
+  .card img {
     width: 24px;
     height: 24px;
     cursor: pointer;
   }
 
-  .buttons img{
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-  }
-
-  .comment-list .buttons{
+  .pls{
     display: flex;
     justify-content: flex-end;
   }
 
+  .actions img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin: 20px 0 0 20px;
+  }
+
+  .likes img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  
+  
+
+
+  .comment-list .buttons{
+    display: flex;
+    justify-content: flex-end;
+  } 
+
+  .hidden.dark{
+    color:#fff;
+  }
   

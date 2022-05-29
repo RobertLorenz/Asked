@@ -33,10 +33,25 @@
     justify-content: flex-start;
   }
 
+  .actions{
+    display:table-row;
+  }
   .delete{
     color: #fff;
-    display: block;
     background: #eb5050;
+    font-size: 1em;
+    width: 100px;
+    text-align: center;
+    width: 120px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 20px auto 0 20px;
+  }
+
+  .edit{
+    color: #fff;
+    background: #722af0;
     font-size: 1em;
     width: 100px;
     text-align: center;

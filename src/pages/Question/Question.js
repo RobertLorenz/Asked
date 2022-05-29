@@ -34,6 +34,11 @@ export default function Question() {
     })
   }
 
+  const handleSelect= () => {
+    
+  }
+
+
 
 
   return (
@@ -48,7 +53,10 @@ export default function Question() {
           </ul>
           <p className="word">Question: </p>
           <p className="q">{question.question}</p>
-          <button onClick={handleClick} className="delete">Delete</button>
+          <div className="actions">
+            <button onClick={handleSelect} className="edit">Edit</button>
+            <button onClick={handleClick} className="delete">Delete</button>
+          </div>
         </>}
     </div>
     <div className="comments">

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useMode } from '../hooks/useMode'
 import likeIcon from '../assets/like.svg'
 import dislikeIcon from '../assets/dislike.svg'
 import deleteIcon from '../assets/thrash.svg'
@@ -13,7 +14,7 @@ export default function CommentList( ) {
   const [active, setActive] = useState(false)
   let id = window.location.pathname.split("/").pop()
   let url = "http://localhost:3000/comments/"
-  
+  const { mode } = useMode()
 
   useEffect(() => {
     const requestOptions = {
@@ -94,21 +95,24 @@ export default function CommentList( ) {
         return comment.questionId ===id &&
         <div key={comment.id} className="card">
           <p className="comment-content">{comment.content }</p>
-          <div className="buttons">
+          <div className="pls">
+           <div className="actions">
             <img alt="delete" src={deleteIcon} onClick={() => { handleDelete(comment.id) }} />
             <img alt="edit" src={editIcon} onClick={() => { handleSelect(comment.id) }} />
-          <div className="likes">
-            <img alt="like" onClick={() => {handlePlus(comment.id)}}
-            src={likeIcon} /> 
-              {comment.likes} 
-            <img alt="dislike" onClick={() => {handleMinus(comment.id)}}
-             src={dislikeIcon} />
-          </div>
+            </div>
+            <div className="likes">
+                  <img alt="like" onClick={() => {handlePlus(comment.id)}}
+                  src={likeIcon} /> 
+                    {comment.likes} 
+                  <img alt="dislike" onClick={() => {handleMinus(comment.id)}}
+                  src={dislikeIcon} />
+            </div>
           </div>
         </div>
       })}
     </div>
     {active && <form className="update-comment" onSubmit={handleUpdate}>
+        <h3 className={`hidden ${mode}`}>Edit comment:</h3>
         <label>
           <textarea 
             value={content.content} onChange={(e)=>{setContent({...content, content: e.target.value})}}
