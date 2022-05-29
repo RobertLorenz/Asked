@@ -13,6 +13,8 @@ export default function Question() {
   const history = useHistory()
   const [content,setContent] = useState('')
   const { mode } = useMode()
+  const [questionData, setQuestionData] = useState({question})
+  const [active, setActive] = useState(false)
   
   
   const { postData } = useFetch('http://localhost:3000/comments/', 'POST')
@@ -35,7 +37,29 @@ export default function Question() {
   }
 
   const handleSelect= () => {
-    
+    setActive(true)
+    fetch(url)
+    .then(response => response.json())
+    .then(data => { setQuestionData(data)
+    console.log(questionData)})
+  }
+
+  const handleUpdate = (e) => {
+    const newBody = {
+      ...questionData,
+      title: questionData.title,
+      question: questionData.question
+    }
+
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newBody)
+    }
+
+    fetch(url, requestOptions)
+    .then(response => response.json())
+    .then(data => {setQuestionData(data)})
   }
 
 
@@ -59,6 +83,26 @@ export default function Question() {
           </div>
         </>}
     </div>
+    {active && <form className="update-question" onSubmit={handleUpdate}>
+      <h3 className={`hidden ${mode}`}>Edit title:</h3>
+      <label>
+       <span>Title:</span>
+        <textarea 
+        type="text" 
+        onChange={(e) => setQuestionData({...questionData, title: e.target.value})}
+        value={questionData.title}
+        ></textarea>
+      </label>
+      <h3 className={`hidden ${mode}`}>Edit question details:</h3>
+      <label>
+        <span>Question in detail:</span>
+          <textarea 
+            onChange={(e) => setQuestionData({...questionData, question: e.target.value})}
+            value={questionData.question}
+          ></textarea>
+      </label>
+      <button>Submit</button>
+    </form>}
     <div className="comments">
     <CommentList />
       <form className="add-comment" onSubmit={handleSubmit}>

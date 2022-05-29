@@ -127,4 +127,29 @@
     text-decoration: none;
     margin: 10px 0px;
   }
+
+  .update-question button {
+    width: 100px;
+    font-size: 1em;
+    color: #fff;
+    padding: 8px 0px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #58249c;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px 0px;
+  }
+
+  .update-question{
+    margin: 60px auto;
+    max-width: 1200px;
+  }
+
+  .hidden.dark{
+    color:#fff;
+  }
   
+  .hidden{
+    padding-top: 20px;
+  }
