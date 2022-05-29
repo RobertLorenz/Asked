@@ -86,7 +86,6 @@ export default function Question() {
     {active && <form className="update-question" onSubmit={handleUpdate}>
       <h3 className={`hidden ${mode}`}>Edit title:</h3>
       <label>
-       <span>Title:</span>
         <textarea 
         type="text" 
         onChange={(e) => setQuestionData({...questionData, title: e.target.value})}
@@ -95,7 +94,7 @@ export default function Question() {
       </label>
       <h3 className={`hidden ${mode}`}>Edit question details:</h3>
       <label>
-        <span>Question in detail:</span>
+
           <textarea 
             onChange={(e) => setQuestionData({...questionData, question: e.target.value})}
             value={questionData.question}
