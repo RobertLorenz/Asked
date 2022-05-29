@@ -12,11 +12,12 @@
 - Van lehetőség új kérdést felvinni, valamint a kérdés létrejötte után a kérdésekhez válaszokat.
 - Kérdéseket és kommenteket lehet törölni és szerkeszteni. Ha törlésre kerül a kérdés, a rá érkezett kommentek is törlésre kerülnek.
 - Egyszerű éjszakai mód, react useContext hookjával megvalósítva
-- egy kereső sáv a főoldalon, melyen keresztül kereshetünk kérdésekre
+- Egy kereső sáv a főoldalon, melyen keresztül kereshetünk kérdésekre
 - like/dislike reakció megvalósítva a válaszokra
+- Adatbázisként localStoreage helyett, json szervert használtam, az adatbázissal a kommunikációt pedig fetch kéréseken keresztül valósítottam meg
 
 # Projekt beüzemelése
 
 1. `npm install` parancs kiadása miután cloneoztuk a repót 
 1. `json-server --watch ./data/db.json` json szerver futtatása 3000-es porton, ezen fut az adatbázis melytől az oldal kapja az adatokat
-1. `npm run start` ezt a fenti parancs után kell kiadni, a terminál megkérdezi majd, hogy a 3000-es port foglalt, szeretnénk-e másik portot használni, ezután y gomb leütését követően megnyílik az oldal a böngészőben
+1. `npm run start` ezt a fenti parancs után kell kiadni. Először nyitnunk kell egy új terminált, majd a terminál megkérdezi, hogy a 3000-es port foglalt, szeretnénk-e másik portot használni, ezután y gomb leütését követően megnyílik az oldal a böngészőben
