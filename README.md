@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Feladat lerírása:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Lehessen kérdéseket felvinni, és azokhoz válaszokat - egy kérdéshez több válasz is lehetséges.
 
-## Available Scripts
+- Legyen egy listázó felület, ahol a kérdések szerepelnek, és hogy mennyi választ adtak már rá.Ha rákattintunk, akkor bejön a kérdés aloldala.
 
-In the project directory, you can run:
+- A kérdés aloldalán jelenjen meg a kérdés és a válaszok, ahol a válaszra pozitív vagy negatív módon lehet reagálni, ezeknek a reakcióknak a számát pedig jelenítsük meg a válasznál. A kérdést és a választ is lehessen szerkeszteni és törölni.
 
-### `npm start`
+# Elért eredmények:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Megvalósítottam egy fő oldalt, ahol a kérdések ki vannak listázva dinamikusan. Ezek a kérdések, egy-egy kártyán helyezkednek el. Látszik, hogy mennyi válasz érkezett rájuk, a címük, és egy részlet a kérdésből.
+- Van lehetőség új kérdést felvinni, valamint a kérdés létrejötte után a kérdésekhez válaszokat.
+- Kérdéseket és kommenteket lehet törölni és szerkeszteni. Ha törlésre kerül a kérdés, a rá érkezett kommentek is törlésre kerülnek.
+- Egyszerű éjszakai mód, react useContext hookjával megvalósítva
+- egy kereső sáv a főoldalon, melyen keresztül kereshetünk kérdésekre
+- like/dislike reakció megvalósítva a válaszokra
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Projekt beüzemelése
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. `npm install` parancs kiadása miután cloneoztuk a repót 
+1. `json-server --watch ./data/db.json` json szerver futtatása 3000-es porton, ezen fut az adatbázis melytől az oldal kapja az adatokat
+1. `npm run start` ezt a fenti parancs után kell kiadni, a terminál megkérdezi majd, hogy a 3000-es port foglalt, szeretnénk-e másik portot használni, ezután y gomb leütését követően megnyílik az oldal a böngészőben
