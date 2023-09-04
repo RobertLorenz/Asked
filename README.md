@@ -1,4 +1,4 @@
-# Feladat lerírása:
+# Projekt lerírása:
 
 - Lehessen kérdéseket felvinni, és azokhoz válaszokat - egy kérdéshez több válasz is lehetséges.
 
